@@ -1,0 +1,162 @@
+type: output
+files:
+- name: task_1.py
+  visible: false
+  placeholders:
+  - offset: 0
+    length: 3550
+    placeholder_text: '# TODO'
+    dependency:
+      section: Основы ООП
+      lesson: Лабораторная работа 1
+      task: Задание 1
+      file: task.py
+      placeholder: 1
+      is_visible: false
+    initial_state:
+      length: 6
+      offset: 0
+    initialized_from_dependency: true
+    selected: false
+    status: Solved
+    encrypted_possible_answer: |-
+      class A:
+          ...
+  - offset: 3553
+    length: 2302
+    placeholder_text: '# TODO'
+    dependency:
+      section: Основы ООП
+      lesson: Лабораторная работа 1
+      task: Задание 1
+      file: task.py
+      placeholder: 2
+      is_visible: false
+    initial_state:
+      length: 6
+      offset: 9
+    initialized_from_dependency: true
+    selected: false
+    status: Solved
+    encrypted_possible_answer: |-
+      class B:
+          ...
+  - offset: 5858
+    length: 1820
+    placeholder_text: '# TODO'
+    dependency:
+      section: Основы ООП
+      lesson: Лабораторная работа 1
+      task: Задание 1
+      file: task.py
+      placeholder: 3
+      is_visible: false
+    initial_state:
+      length: 6
+      offset: 18
+    initialized_from_dependency: true
+    selected: false
+    status: Solved
+    encrypted_possible_answer: |-
+      class C:
+          ...
+  text: |
+    # TODO
+
+
+    # TODO
+
+
+    # TODO
+  learner_created: false
+- name: main.py
+  visible: true
+  placeholders:
+  - offset: 74
+    length: 0
+    placeholder_text: "# TODO: импортируйте классы, созданные в ходе выполнения пр\
+      ошлого задания"
+    initial_state:
+      length: 73
+      offset: 19
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: "A, B, C"
+  - offset: 75
+    length: 64
+    placeholder_text: "# TODO: инстанцировать все описанные классы, создав три объ\
+      екта."
+    initial_state:
+      length: 64
+      offset: 122
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: "   a = A()\n    b = B()\n    c = "
+  - offset: 142
+    length: 50
+    placeholder_text: "# TODO: вызвать метод с некорректными аргументами"
+    initial_state:
+      length: 49
+      offset: 205
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: '   a.add_another_a'
+  - offset: 194
+    length: 2
+    placeholder_text: "# TODO: вызвать метод с некорректными аргументами"
+    initial_state:
+      length: 49
+      offset: 340
+    initialized_from_dependency: false
+    selected: false
+    status: Solved
+    encrypted_possible_answer: '   b.add_another_b'
+  - offset: 194
+    length: 51
+    placeholder_text: "# TODO: вызвать метод с некорректными аргументами"
+    initial_state:
+      length: 49
+      offset: 475
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: '   c.add_another_c'
+  text: |
+    from task_1 import # TODO: импортируйте классы, созданные в ходе выполнения прошлого задания
+
+    if __name__ == "__main__":
+     # TODO: инстанцировать все описанные классы, создав три объекта.C()
+
+        try:
+         # TODO: вызвать метод с некорректными аргументами(b)
+        except TypeError:
+            print('Ошибка: неправильные данные')
+
+        try:
+         # TODO: вызвать метод с некорректными аргументами(a)
+        except TypeError:
+            print('Ошибка: неправильные данные')
+
+        try:
+         # TODO: вызвать метод с некорректными аргументами(a)
+        except TypeError:
+            print('Ошибка: неправильные данные')
+  learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: tests/output.txt
+  visible: false
+  text: |
+    Ошибка: неправильные данные
+    Ошибка: неправильные данные
+    Ошибка: неправильные данные
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 08 Dec 2024 11:31:31 UTC"
+record: -1
