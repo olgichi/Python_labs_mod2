@@ -1,0 +1,92 @@
+type: edu
+files:
+- name: task.py
+  visible: true
+  placeholders:
+  - offset: 188
+    length: 6
+    placeholder_text: "# TODO: написать класс Book"
+    initial_state:
+      length: 27
+      offset: 188
+    initialized_from_dependency: false
+    selected: true
+    status: Solved
+    encrypted_possible_answer: |
+      class Book:
+          def __init__(self, id_, name, pages):
+              self.id = id_
+              self.name = name
+              self.pages = pages
+
+          def __str__(self):
+              return f'Книга "{self.name}"'
+
+          def __repr__(self):
+              return f'Book(id_={self.id}, name=\'{self.name}\', pages={self.pages})'
+  text: |
+    BOOKS_DATABASE = [
+        {
+            "id": 1,
+            "name": "test_name_1",
+            "pages": 200,
+        },
+        {
+            "id": 2,
+            "name": "test_name_2",
+            "pages": 400,
+        }
+    ]
+
+
+    # TODO: написать класс Book
+
+    if __name__ == '__main__':
+        # инициализируем список книг
+        list_books = [
+            Book(id_=book_dict["id"], name=book_dict["name"], pages=book_dict["pages"]) for book_dict in BOOKS_DATABASE
+        ]
+        for book in list_books:
+            print(book)  # проверяем метод __str__
+
+        print(list_books)  # проверяем метод __repr__
+  learner_created: false
+- name: tests/test_task.py
+  visible: false
+  text: |
+    import inspect
+    import unittest
+
+    import task
+
+
+    class TestBook(unittest.TestCase):
+        def test_existance(self):
+            try:
+                self.assertTrue(inspect.isclass(task.Book), 'Book не является классом')
+            except AttributeError:
+                raise self.failureException('Book не определён')
+
+        def test_init(self):
+            signature = inspect.signature(task.Book.__init__)
+            self.assertGreaterEqual(len(signature.parameters), 4, 'Недостаточно параметров у инициализатора')
+            self.assertTrue('id_' in signature.parameters, 'нет требуемого параметра id_')
+            self.assertTrue('name' in signature.parameters, 'нет требуемого параметра name')
+            self.assertTrue('pages' in signature.parameters, 'нет требуемого параметра pages')
+
+        def test_str(self):
+            book = task.Book(1, 'Python for dummies', 1024)
+            self.assertEqual(f'Книга "Python for dummies"', str(book))
+            self.assertEqual(f"Book(id_=1, name='Python for dummies', pages=1024)", repr(book))
+  learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
+- name: tests/__init__.py
+  visible: false
+  learner_created: false
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Sun, 15 Dec 2024 13:41:18 UTC"
+record: -1
